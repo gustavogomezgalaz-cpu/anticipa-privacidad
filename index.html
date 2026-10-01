@@ -30,10 +30,14 @@
   nav button[aria-current="true"] { background:var(--marca); border-color:var(--marca); color:#fff; }
   h1 { font-size:1.6rem; line-height:1.25; margin:0 0 .35rem; letter-spacing:-.02em; }
   h2 { font-size:1.05rem; margin:2rem 0 .4rem; }
+  h3 { font-size:1rem; margin:1.4rem 0 .3rem; color:var(--suave); }
   .fecha { color:var(--suave); font-size:.9rem; margin:0 0 1.5rem; }
   .intro { font-size:1.1rem; }
   p { margin:0 0 .9rem; }
-  a { color:var(--marca); }
+  ul { margin:0 0 .9rem; padding-left:1.25rem; }
+  li { margin:0 0 .3rem; }
+  li ul { margin:.3rem 0 0; }
+  a { color:var(--marca); overflow-wrap:anywhere; }
   footer { max-width:42rem; margin:3rem auto 0; padding-top:1.25rem;
            border-top:1px solid color-mix(in srgb, var(--suave) 35%, transparent);
            color:var(--suave); font-size:.85rem; }
@@ -47,85 +51,190 @@
 <main>
     <article lang="es" data-idioma="es" hidden>
       <h1>Política de privacidad</h1>
-      <p class="fecha">Última revisión: 2026-09-02</p>
-      <p class="intro">En resumen: esta app no recoge ningún dato personal tuyo ni de tu hijo. No hay cuenta, no hay registro y no hay servidor nuestro al que mandar datos: todo lo que armas se queda en tu teléfono. Sin anuncios, y sin ninguna compra que el niño pueda hacer. Lo que sigue lo explica en detalle.</p>
+      <p class="fecha">Última revisión: 2026-10-01</p>
+      <p class="intro">En resumen: no hay cuenta ni registro, y lo que armas en la app —las rutinas, los nombres, las fotos y tu voz— se queda en tu teléfono. Para saber qué partes de la app sirven y encontrar fallos, Anticipa usa Firebase, un servicio de Google, que recibe datos de uso y de fallos asociados a un identificador aleatorio de la instalación, sin tu nombre ni el de tu hijo. Sin anuncios, y sin ninguna compra que el niño pueda hacer. Lo que sigue lo explica en detalle.</p>
       <h2>Qué datos recogemos</h2>
-      <p>Ningún dato personal. No pedimos nombre real, correo, teléfono, ubicación ni contactos. No hay inicio de sesión y no tenemos servidor: no sabemos quién usa la app ni cuántas veces la abre.</p>
-      <p>Lo único que puede salir del teléfono es un <strong>identificador técnico del aparato —no de la persona—</strong> que Google usa para entregar los avisos. La app incluye el componente de notificaciones de Google, y ese componente puede asignarlo: nosotros no lo pedimos, no lo recibimos y no lo guardamos. No va unido a ningún nombre, no se usa para publicidad ni para seguimiento entre apps, y desaparece cuando desinstalas la app.</p>
+      <p>No pedimos nombre real, correo, teléfono ni contactos, y no hay inicio de sesión. Lo que sí sale del teléfono son datos de uso y de fallos, que van a Firebase, de Google LLC. Aquí están todos, uno por uno.</p>
+      <h3>Estadísticas de uso (Firebase Analytics)</h3>
+      <p>La app usa Firebase Analytics en modo infantil:</p>
+      <ul>
+        <li>Funciona con un <strong>identificador de instancia de la app</strong> (app instance ID): un identificador aleatorio que se crea al instalar la app y se reinicia si la desinstalas.</li>
+        <li>No usamos el identificador de publicidad del teléfono (AdID) ni el ANDROID_ID (SSAID), y no personalizamos anuncios. Google Signals está apagado, y también el uso compartido de datos con Google.</li>
+        <li>Firebase anota por su cuenta cuándo se abre la app por primera vez, cuándo empieza una sesión, cuánto tiempo se usa y cuándo se actualiza. Con eso van datos técnicos básicos del aparato, como el modelo, la versión de Android y la versión de la app.</li>
+        <li>Nosotros anotamos, además, una lista cerrada de hechos de uso:
+          <ul>
+            <li>que se terminó (o se saltó) la bienvenida;</li>
+            <li>que se empezó o se terminó una rutina, con cuántos pasos se hicieron, nunca cuáles;</li>
+            <li>que se grabó una voz: el hecho, nunca el audio;</li>
+            <li>la entrada a la Zona de Papás y la barrera de adultos (si se pasó o se cerró);</li>
+            <li>los candados tocados, la pantalla de planes vista, el plan elegido, la compra (el plan, el monto y la moneda), si una compra falló y si se usó «restaurar compras»;</li>
+            <li>que se tocó un aviso.</li>
+          </ul>
+        </li>
+        <li>Y tres propiedades: el idioma de la app, si está en el plan gratis o en cuál de pago, y el nombre del anuncio de nuestra campaña que trajo la instalación, si vino de uno. Ese nombre sale del «install referrer» de Google Play y se lee en el teléfono: de ahí solo guardamos el nombre del anuncio (como c7 o c11), de una lista cerrada. El identificador del clic (gclid) se descarta y no se manda.</li>
+        <li>Al conectarse, Google deduce una <strong>ubicación aproximada</strong> (el país o la ciudad) a partir de la dirección IP. No hay ubicación precisa, y la app no pide permiso de ubicación.</li>
+        <li>Estos datos se guardan <strong>2 meses</strong> y después caducan.</li>
+      </ul>
+      <h3>Informes de fallos (Firebase Crashlytics)</h3>
+      <p>Si la app se cierra por un error, Firebase Crashlytics, también de Google, manda un informe técnico: la traza del error, el modelo del teléfono, la versión de Android, la versión de la app, la hora y un identificador de instalación de Crashlytics. El informe no lleva ningún contenido tuyo ni de tu hijo. Google guarda estos informes 90 días.</p>
+      <h3>Lo que nunca sale del teléfono</h3>
+      <p>Esto no viaja en la analítica ni en los informes de fallos, y una prueba automática del código lo vigila en cada versión:</p>
+      <ul>
+        <li>los nombres (del niño, de las rutinas, de los pasos) y cualquier texto que escribas;</li>
+        <li>las fotos y las grabaciones;</li>
+        <li>las respuestas de la bienvenida: la edad, cómo se comunica, qué momento le cuesta más y si trabaja con un profesional;</li>
+        <li>el contenido de las rutinas.</li>
+      </ul>
+      <p>Todo eso sigue viviendo solo en el teléfono.</p>
+      <h3>Para qué</h3>
+      <p>Para saber qué partes de la app sirven y cuáles no, para encontrar y arreglar fallos, y para saber qué anuncio nuestro trae familias que se quedan. No vendemos estos datos, nada se comparte con terceros para publicidad, y no se usan para mostrarle anuncios a nadie: la app no tiene anuncios. Google trata estos datos como proveedor de Firebase; puedes leer cómo en <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
+      <h3>El identificador técnico de los avisos</h3>
+      <p>Aparte de Firebase, la app incluye el componente de notificaciones de Google para entregar los avisos, y ese componente puede asignar un <strong>identificador técnico del aparato —no de la persona—</strong>. Nosotros no lo pedimos, no lo recibimos y no lo guardamos. No va unido a ningún nombre, no se usa para publicidad ni para seguimiento entre apps, y desaparece cuando desinstalas la app.</p>
       <h2>Qué se guarda en el teléfono</h2>
-      <p>Las rutinas que armas y sus pasos, los perfiles que crees con su nombre y avatar, el avance del niño (pasos cumplidos, estrellas, premios, si un paso lo hizo solo, cómo amaneció de energía) y tus preferencias (idioma, alto contraste, voz, recordatorios). Todo eso vive en el almacenamiento de la app, en el teléfono, y no sale de ahí: no se sube, no se sincroniza y no se comparte con nadie. El nombre del perfil lo eliges tú y puede ser un apodo.</p>
+      <p>Las rutinas que armas y sus pasos, los perfiles que crees con su nombre y avatar, el avance del niño (pasos cumplidos, estrellas, premios, si un paso lo hizo solo, cómo amaneció de energía), tus preferencias (idioma, alto contraste, voz, recordatorios) y lo que nos cuentas de tu hijo (su tramo de edad, cómo se comunica, qué momento del día le cuesta más y si trabaja con un profesional). Todo eso vive en el almacenamiento de la app, en el teléfono: no se sube, no se sincroniza y no se comparte con nadie. La analítica no copia este contenido; solo anota los hechos sueltos de la lista de arriba, como que se terminó una rutina y con cuántos pasos, o el idioma de la app. El nombre del perfil lo eliges tú y puede ser un apodo.</p>
       <h2>Tus fotos</h2>
       <p>Puedes usar fotos propias en los pasos de una rutina: la foto real del baño de tu casa, de su mochila, de su cama. Esas fotos se quedan en el almacenamiento de la app, en el teléfono, y nunca se suben a ningún lado. Cuando compartes una rutina con otra persona, las fotos del niño <strong>no</strong> viajan en ese archivo: se comparten los pasos, no las imágenes de tu hijo.</p>
       <h2>Tu voz (micrófono)</h2>
-      <p>Anticipa te deja <strong>grabar tu propia voz</strong> para un paso —"primero, los dientes"— para que tu hijo oiga a mamá o papá en vez de la voz del teléfono. Es lo que hace a esta app distinta de las demás: está pensada para acompañar de forma personal a cada niño. Por eso, y solo por eso, pide el micrófono. El micrófono se activa <strong>únicamente mientras grabas</strong>, y solo si tú tocas "grabar"; el permiso se pide en ese momento, nunca al abrir la app. La grabación se guarda en el teléfono, junto a las fotos, y <strong>nunca se sube a ningún lado ni se comparte</strong>. Es opcional, y puedes borrarla cuando quieras.</p>
+      <p>Anticipa te deja <strong>grabar tu propia voz</strong> para un paso —"primero, los dientes"— para que tu hijo oiga a mamá o papá en vez de la voz del teléfono. Es lo que hace a esta app distinta de las demás: está pensada para acompañar de forma personal a cada niño. Por eso, y solo por eso, pide el micrófono. El micrófono se activa <strong>únicamente mientras grabas</strong>, y solo si tú tocas "grabar"; el permiso se pide en ese momento, nunca al abrir la app. La grabación se guarda en el teléfono, junto a las fotos, y <strong>nunca se sube a ningún lado ni se comparte</strong>. La analítica solo anota que se grabó una voz, nunca el audio. Es opcional, y puedes borrarla cuando quieras.</p>
       <h2>Permisos que pide la app</h2>
-      <p>Cámara y fotos, solo cuando eliges tomar o buscar una foto para un paso: la app abre el selector del sistema y usa únicamente la imagen que escoges. Micrófono, solo cuando eliges grabar tu voz para un paso: la grabación se queda en el teléfono y no se envía a ninguna parte. Notificaciones, solo si enciendes un recordatorio: sirven para el aviso de la rutina y nada más. Ese aviso lo programa el propio teléfono a la hora que tú elijas, y para entregarlo la app incluye el componente de notificaciones de Google, que puede asignar un identificador técnico del aparato (ver «Qué datos recogemos»). Huella o rostro, solo si dejas encendida esa opción para entrar a la Zona de Papás: la comprobación la hace el sistema operativo y la app únicamente recibe un sí o un no, nunca tu huella.</p>
+      <p>Cámara y fotos, solo cuando eliges tomar o buscar una foto para un paso: la app abre el selector del sistema y usa únicamente la imagen que escoges. Micrófono, solo cuando eliges grabar tu voz para un paso: la grabación se queda en el teléfono y no se envía a ninguna parte. Notificaciones, solo si aceptas los avisos: sirven para el aviso de la rutina y, si usas el plan gratis, para recordarte la rutina de tu hijo cuando pasan dos días sin abrir la app y el viernes por la tarde. Esos avisos los programa el propio teléfono a la hora que tú elijas, y para entregarlos la app incluye el componente de notificaciones de Google, que puede asignar un identificador técnico del aparato (ver «Qué datos recogemos»). Huella o rostro, solo si dejas encendida esa opción para entrar a la Zona de Papás: la comprobación la hace el sistema operativo y la app únicamente recibe un sí o un no, nunca tu huella.</p>
       <h2>Publicidad</h2>
-      <p>No hay. Ni banners, ni videos, ni contenido patrocinado. No usamos identificadores de publicidad ni redes de anuncios, y por lo tanto no hay perfilado ni seguimiento entre apps.</p>
+      <p>No hay. Ni banners, ni videos, ni contenido patrocinado. No usamos identificadores de publicidad ni redes de anuncios, y por lo tanto no hay perfilado ni seguimiento entre apps. Lo que sí hacemos es anunciar Anticipa en Google: para saber qué anuncio trae familias que se quedan, la app lee el nombre del anuncio que la trajo, como se explica en «Qué datos recogemos».</p>
       <h2>La suscripción</h2>
-      <p>La app tiene un plan de pago para adultos. El cobro lo gestiona Google Play con tu cuenta, no nosotros: no vemos ni guardamos datos de tu tarjeta. La app solo sabe si hay una suscripción activa, y para saberlo le pregunta a Google Play como mucho una vez al día. Se cancela desde Google Play cuando quieras, y lo que ya armaste se queda entero en el teléfono igual. Dentro de la app no hay ninguna otra compra, y el niño no puede comprar nada: el plan vive detrás de la barrera de adultos.</p>
+      <p>La app tiene un plan de pago para adultos. El cobro lo gestiona Google Play con tu cuenta, no nosotros: no vemos ni guardamos datos de tu tarjeta. Cuando compras, la analítica anota el plan, el monto y la moneda, sin ningún dato de pago. La app solo sabe si hay una suscripción activa, y para saberlo le pregunta a Google Play como mucho una vez al día. Se cancela desde Google Play cuando quieras, y lo que ya armaste se queda entero en el teléfono igual. Dentro de la app no hay ninguna otra compra, y el niño no puede comprar nada: el plan vive detrás de la barrera de adultos.</p>
       <h2>Niños</h2>
-      <p>La app está pensada para acompañar a niñas y niños en sus rutinas del día, y cumple las normas de Google Play para familias. No recogemos ningún dato personal del niño: ni nombre real, ni correo, ni ubicación, ni nada que permita identificarlo. El niño no puede comprar nada, no puede escribir a nadie y no hay enlaces que lo saquen de la app. Todo lo que es del adulto —crear rutinas, el progreso, los ajustes— está detrás de una barrera que él no pasa solo.</p>
+      <p>La app está pensada para acompañar a niñas y niños en sus rutinas del día, y cumple las normas de Google Play para familias. No recogemos el nombre real del niño, ni su correo, ni su ubicación precisa, ni sus respuestas de la bienvenida, ni nada que escribas sobre él. La analítica mide cómo se usa la app con un identificador aleatorio de la instalación, sin saber quién la usa. El niño no puede comprar nada, no puede escribir a nadie y no hay enlaces que lo saquen de la app. Todo lo que es del adulto —crear rutinas, el progreso, los ajustes— está detrás de una barrera que él no pasa solo.</p>
       <h2>Cómo borrar los datos</h2>
-      <p>Desde la Zona de Papás puedes borrar un perfil con todo su contenido. Para borrarlo todo, desinstala la app: como nada se guarda fuera del teléfono, desinstalar es un borrado completo y definitivo, y el identificador técnico de los avisos desaparece con él. No hay que pedirnos nada porque no guardamos nada tuyo.</p>
+      <p>Desde la Zona de Papás puedes borrar un perfil con todo su contenido. Para borrar todo lo que hay en el teléfono, desinstala la app: las rutinas, las fotos y las grabaciones no tienen copia fuera de él, así que se borran del todo, y el identificador técnico de los avisos desaparece con ellas.</p>
+      <p>Desinstalar también reinicia el identificador de la analítica: si vuelves a instalar, empieza uno nuevo. Lo que ya se envió a Firebase no se borra al desinstalar, pero caduca solo: los datos de analítica a los 2 meses y los informes de fallos a los 90 días. La app no tiene un botón para pedir el borrado; si quieres que lo borremos antes, escríbenos a <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
       <h2>Cambios en esta política</h2>
-      <p>Si alguna versión futura cambiara algo de esto, se actualiza este texto y la fecha de revisión de arriba, y el cambio viaja en la propia actualización de la app.</p>
+      <p>Si alguna versión futura cambiara algo de esto, se actualiza este texto y la fecha de revisión de arriba, y el cambio viaja en la propia actualización de la app. La revisión del 1 de octubre de 2026 agregó Firebase Analytics y Firebase Crashlytics, que la app no usaba antes.</p>
       <h2>Contacto</h2>
       <p>Para cualquier duda sobre privacidad, escribe a <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
     </article>
     <article lang="en" data-idioma="en" hidden>
       <h1>Privacy policy</h1>
-      <p class="fecha">Last reviewed: 2026-09-02</p>
-      <p class="intro">The short version: this app collects no personal data about you or your child. There is no account, no sign-up and no server of ours to send data to: everything you build stays on your phone. No ads, and no purchase your child can make. What follows explains it in detail.</p>
+      <p class="fecha">Last reviewed: 2026-10-01</p>
+      <p class="intro">The short version: there is no account and no sign-up, and what you build in the app — the routines, the names, the photos and your voice — stays on your phone. To learn which parts of the app help and to find bugs, Anticipa uses Firebase, a Google service, which receives usage and crash data tied to a random installation identifier, without your name or your child's. No ads, and no purchase your child can make. What follows explains it in detail.</p>
       <h2>What data we collect</h2>
-      <p>No personal data. We do not ask for a real name, email, phone number, location or contacts. There is no login and we have no server: we do not know who uses the app or how often it is opened.</p>
-      <p>The only thing that can leave the phone is a <strong>technical identifier for the device — not for the person</strong> — that Google uses to deliver notifications. The app includes Google's notification component, and that component may assign one: we do not ask for it, we do not receive it and we do not store it. It is not tied to any name, it is not used for advertising or cross-app tracking, and it goes away when you uninstall the app.</p>
+      <p>We do not ask for a real name, email, phone number or contacts, and there is no login. What does leave the phone is usage and crash data, which goes to Firebase, from Google LLC. Here is all of it, item by item.</p>
+      <h3>Usage statistics (Firebase Analytics)</h3>
+      <p>The app uses Firebase Analytics in child-directed mode:</p>
+      <ul>
+        <li>It works with an <strong>app instance ID</strong>: a random identifier created when the app is installed and reset if you uninstall it.</li>
+        <li>We do not use the phone's advertising ID (AdID) or the ANDROID_ID (SSAID), and we do not personalize ads. Google Signals is turned off, and so is data sharing with Google.</li>
+        <li>Firebase records on its own when the app is opened for the first time, when a session starts, how long the app is used and when it is updated. Basic technical details about the device go along with that, such as the model, the Android version and the app version.</li>
+        <li>On top of that, we record a closed list of usage events:
+          <ul>
+            <li>that the welcome was finished (or skipped);</li>
+            <li>that a routine was started or finished, with how many steps were done, never which ones;</li>
+            <li>that a voice was recorded: the fact, never the audio;</li>
+            <li>entering the Parents Area and the grown-up barrier (whether it was passed or closed);</li>
+            <li>locks tapped, the plans screen being viewed, the plan chosen, the purchase (plan, amount and currency), a failed purchase and "restore purchases";</li>
+            <li>that a notification was tapped.</li>
+          </ul>
+        </li>
+        <li>And three properties: the app language, whether it is on the free plan or which paid plan, and the name of the ad from our campaign that brought the install, if it came from one. That name comes from Google Play's install referrer and is read on the phone: from it we keep only the ad name (such as c7 or c11), from a closed list. The click identifier (gclid) is discarded and not sent.</li>
+        <li>When the app connects, Google infers an <strong>approximate location</strong> (country or city) from the IP address. There is no precise location, and the app does not ask for location permission.</li>
+        <li>This data is kept for <strong>2 months</strong> and then expires.</li>
+      </ul>
+      <h3>Crash reports (Firebase Crashlytics)</h3>
+      <p>If the app closes because of an error, Firebase Crashlytics, also from Google, sends a technical report: the error trace, the phone model, the Android version, the app version, the time and a Crashlytics installation identifier. The report carries no content from you or your child. Google keeps these reports for 90 days.</p>
+      <h3>What never leaves the phone</h3>
+      <p>This does not travel in the analytics or in the crash reports, and an automated test in the code checks it in every version:</p>
+      <ul>
+        <li>names (your child's, the routines', the steps') and any text you type;</li>
+        <li>photos and recordings;</li>
+        <li>the answers from the welcome: age, how your child communicates, which moment is hardest and whether they work with a professional;</li>
+        <li>the content of the routines.</li>
+      </ul>
+      <p>All of that still lives only on the phone.</p>
+      <h3>Why</h3>
+      <p>To learn which parts of the app help and which do not, to find and fix bugs, and to know which of our ads brings families who stay. We do not sell this data, nothing is shared with third parties for advertising, and it is not used to show anyone ads: the app has no ads. Google processes this data as the Firebase provider; you can read how at <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
+      <h3>The technical identifier for notifications</h3>
+      <p>Apart from Firebase, the app includes Google's notification component to deliver reminders, and that component may assign a <strong>technical identifier for the device — not for the person</strong>. We do not ask for it, we do not receive it and we do not store it. It is not tied to any name, it is not used for advertising or cross-app tracking, and it goes away when you uninstall the app.</p>
       <h2>What is stored on the phone</h2>
-      <p>The routines you build and their steps, the profiles you create with their name and avatar, your child's progress (steps completed, stars, rewards, whether a step was done on their own, their energy for the day) and your preferences (language, high contrast, voice, reminders). All of it lives in the app storage, on the phone, and never leaves it: it is not uploaded, not synced and not shared with anyone. You choose the profile name and it can be a nickname.</p>
+      <p>The routines you build and their steps, the profiles you create with their name and avatar, your child's progress (steps completed, stars, rewards, whether a step was done on their own, their energy for the day), your preferences (language, high contrast, voice, reminders) and what you tell us about your child (their age range, how they communicate, which time of day is hardest for them and whether they work with a professional). All of it lives in the app storage, on the phone: it is not uploaded, not synced and not shared with anyone. Analytics does not copy this content; it only records the loose facts listed above, such as that a routine was finished and with how many steps, or the app language. You choose the profile name and it can be a nickname.</p>
       <h2>Your photos</h2>
       <p>You can use your own photos in the steps of a routine: the real photo of your bathroom, their backpack, their bed. Those photos stay in the app storage, on the phone, and are never uploaded anywhere. When you share a routine with someone else, your child's photos do <strong>not</strong> travel in that file: the steps are shared, not your child's images.</p>
       <h2>Your voice (microphone)</h2>
-      <p>Anticipa lets you <strong>record your own voice</strong> for a step —"first, brushing teeth"— so your child hears mum or dad instead of the phone's voice. This is what makes this app different from the others: it is made to support each child in a personal way. That, and only that, is why it asks for the microphone. The microphone turns on <strong>only while you are recording</strong>, and only if you tap "record"; the permission is requested at that moment, never when you open the app. The recording is saved on the phone, next to the photos, and is <strong>never uploaded or shared</strong>. It is optional, and you can delete it whenever you want.</p>
+      <p>Anticipa lets you <strong>record your own voice</strong> for a step —"first, brushing teeth"— so your child hears mum or dad instead of the phone's voice. This is what makes this app different from the others: it is made to support each child in a personal way. That, and only that, is why it asks for the microphone. The microphone turns on <strong>only while you are recording</strong>, and only if you tap "record"; the permission is requested at that moment, never when you open the app. The recording is saved on the phone, next to the photos, and is <strong>never uploaded or shared</strong>. Analytics only records that a voice was recorded, never the audio. It is optional, and you can delete it whenever you want.</p>
       <h2>Permissions the app asks for</h2>
-      <p>Camera and photos, only when you choose to take or pick a photo for a step: the app opens the system picker and uses only the image you select. Microphone, only when you choose to record your voice for a step: the recording stays on the phone and is not sent anywhere. Notifications, only if you turn on a reminder: they are used for the routine reminder and nothing else. The phone itself schedules that reminder at the time you choose, and to deliver it the app includes Google's notification component, which may assign a technical device identifier (see "What data we collect"). Fingerprint or face, only if you leave that option on for the Parents Area: the check is done by the operating system and the app only gets a yes or a no, never your fingerprint.</p>
+      <p>Camera and photos, only when you choose to take or pick a photo for a step: the app opens the system picker and uses only the image you select. Microphone, only when you choose to record your voice for a step: the recording stays on the phone and is not sent anywhere. Notifications, only if you accept reminders: they are used for the routine reminder and, if you are on the free plan, to remind you of your child's routine when two days pass without opening the app and on Friday afternoon. The phone itself schedules those reminders at the times you choose, and to deliver them the app includes Google's notification component, which may assign a technical device identifier (see "What data we collect"). Fingerprint or face, only if you leave that option on for the Parents Area: the check is done by the operating system and the app only gets a yes or a no, never your fingerprint.</p>
       <h2>Advertising</h2>
-      <p>There is none. No banners, no videos, no sponsored content. We use no advertising identifiers and no ad networks, so there is no profiling and no tracking across apps.</p>
+      <p>There is none. No banners, no videos, no sponsored content. We use no advertising identifiers and no ad networks, so there is no profiling and no tracking across apps. What we do is advertise Anticipa on Google: to know which ad brings families who stay, the app reads the name of the ad that brought it, as explained in "What data we collect".</p>
       <h2>The subscription</h2>
-      <p>The app has a paid plan for grown-ups. Google Play handles the payment with your account, not us: we never see or store your card details. The app only knows whether a subscription is active, and to find that out it asks Google Play at most once a day. You can cancel from Google Play whenever you want, and everything you already built stays whole on your phone either way. There is no other purchase inside the app, and your child cannot buy anything: the plan sits behind the grown-up barrier.</p>
+      <p>The app has a paid plan for grown-ups. Google Play handles the payment with your account, not us: we never see or store your card details. When you buy, analytics records the plan, the amount and the currency, with no payment details. The app only knows whether a subscription is active, and to find that out it asks Google Play at most once a day. You can cancel from Google Play whenever you want, and everything you already built stays whole on your phone either way. There is no other purchase inside the app, and your child cannot buy anything: the plan sits behind the grown-up barrier.</p>
       <h2>Children</h2>
-      <p>The app is made to support children through their daily routines, and follows the Google Play families policies. We collect no personal data about your child: no real name, no email, no location, nothing that could identify them. Your child cannot buy anything, cannot message anyone, and there are no links that take them out of the app. Everything meant for the grown-up — creating routines, progress, settings — sits behind a barrier they do not get past on their own.</p>
+      <p>The app is made to support children through their daily routines, and follows the Google Play families policies. We do not collect your child's real name, email, precise location, answers from the welcome or anything you write about them. Analytics measures how the app is used with a random installation identifier, without knowing who is using it. Your child cannot buy anything, cannot message anyone, and there are no links that take them out of the app. Everything meant for the grown-up — creating routines, progress, settings — sits behind a barrier they do not get past on their own.</p>
       <h2>How to delete the data</h2>
-      <p>From the Parents Area you can delete a profile along with everything in it. To delete everything, uninstall the app: since nothing is stored outside the phone, uninstalling is a complete and final deletion, and the technical identifier used for notifications goes with it. There is nothing to request from us because we store nothing of yours.</p>
+      <p>From the Parents Area you can delete a profile along with everything in it. To delete everything on the phone, uninstall the app: the routines, photos and recordings have no copy outside it, so they are gone for good, and the technical identifier used for notifications goes with them.</p>
+      <p>Uninstalling also resets the analytics identifier: if you install again, a new one starts. What was already sent to Firebase is not deleted when you uninstall, but it expires on its own: analytics data after 2 months and crash reports after 90 days. The app has no button to request deletion; if you want us to delete it sooner, write to <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
       <h2>Changes to this policy</h2>
-      <p>If a future version changes any of this, we update this text and the review date above, and the change travels inside the app update itself.</p>
+      <p>If a future version changes any of this, we update this text and the review date above, and the change travels inside the app update itself. The October 1, 2026 revision added Firebase Analytics and Firebase Crashlytics, which the app did not use before.</p>
       <h2>Contact</h2>
       <p>For any privacy question, write to <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
     </article>
     <article lang="pt" data-idioma="pt" hidden>
       <h1>Política de privacidade</h1>
-      <p class="fecha">Última revisão: 2026-09-02</p>
-      <p class="intro">Resumindo: este app não coleta nenhum dado pessoal seu nem do seu filho. Não tem conta, não tem cadastro e não tem servidor nosso para onde mandar dados: tudo o que você monta fica no seu celular. Sem anúncios, e sem nenhuma compra que a criança possa fazer. O texto abaixo explica em detalhe.</p>
+      <p class="fecha">Última revisão: 2026-10-01</p>
+      <p class="intro">Resumindo: não tem conta nem cadastro, e o que você monta no app —as rotinas, os nomes, as fotos e a sua voz— fica no seu celular. Para saber quais partes do app ajudam e encontrar falhas, o Anticipa usa o Firebase, um serviço do Google, que recebe dados de uso e de falhas ligados a um identificador aleatório da instalação, sem o seu nome nem o do seu filho. Sem anúncios, e sem nenhuma compra que a criança possa fazer. O texto abaixo explica em detalhe.</p>
       <h2>Que dados coletamos</h2>
-      <p>Nenhum dado pessoal. Não pedimos nome real, e-mail, telefone, localização nem contatos. Não tem login e não temos servidor: não sabemos quem usa o app nem quantas vezes ele é aberto.</p>
-      <p>A única coisa que pode sair do celular é um <strong>identificador técnico do aparelho —não da pessoa—</strong> que o Google usa para entregar os avisos. O app inclui o componente de notificações do Google, e esse componente pode atribuí-lo: nós não pedimos, não recebemos e não guardamos. Ele não fica ligado a nenhum nome, não é usado para publicidade nem para rastreamento entre apps, e desaparece quando você desinstala o app.</p>
+      <p>Não pedimos nome real, e-mail, telefone nem contatos, e não tem login. O que sai do celular são dados de uso e de falhas, que vão para o Firebase, do Google LLC. Aqui estão todos, um por um.</p>
+      <h3>Estatísticas de uso (Firebase Analytics)</h3>
+      <p>O app usa o Firebase Analytics no modo infantil:</p>
+      <ul>
+        <li>Ele funciona com um <strong>identificador de instância do app</strong> (app instance ID): um identificador aleatório criado quando o app é instalado e reiniciado se você o desinstalar.</li>
+        <li>Não usamos o identificador de publicidade do celular (AdID) nem o ANDROID_ID (SSAID), e não personalizamos anúncios. O Google Signals está desligado, e o compartilhamento de dados com o Google também.</li>
+        <li>O Firebase registra por conta própria quando o app é aberto pela primeira vez, quando começa uma sessão, quanto tempo o app é usado e quando ele é atualizado. Junto vão dados técnicos básicos do aparelho, como o modelo, a versão do Android e a versão do app.</li>
+        <li>Além disso, nós registramos uma lista fechada de eventos de uso:
+          <ul>
+            <li>que as boas-vindas terminaram (ou foram puladas);</li>
+            <li>que uma rotina começou ou terminou, com quantos passos foram feitos, nunca quais;</li>
+            <li>que uma voz foi gravada: o fato, nunca o áudio;</li>
+            <li>a entrada na Área dos Pais e a barreira de adultos (se foi passada ou fechada);</li>
+            <li>os cadeados tocados, a tela de planos vista, o plano escolhido, a compra (plano, valor e moeda), a falha de uma compra e «restaurar compras»;</li>
+            <li>que um aviso foi tocado.</li>
+          </ul>
+        </li>
+        <li>E três propriedades: o idioma do app, se ele está no plano grátis ou em qual plano pago, e o nome do anúncio da nossa campanha que trouxe a instalação, se veio de um. Esse nome vem do «install referrer» do Google Play e é lido no celular: dele guardamos só o nome do anúncio (como c7 ou c11), de uma lista fechada. O identificador do clique (gclid) é descartado e não é enviado.</li>
+        <li>Ao se conectar, o Google deduz uma <strong>localização aproximada</strong> (o país ou a cidade) a partir do endereço IP. Não há localização precisa, e o app não pede permissão de localização.</li>
+        <li>Esses dados ficam guardados por <strong>2 meses</strong> e depois expiram.</li>
+      </ul>
+      <h3>Relatórios de falhas (Firebase Crashlytics)</h3>
+      <p>Se o app fechar por causa de um erro, o Firebase Crashlytics, também do Google, envia um relatório técnico: o rastreamento do erro (stack trace), o modelo do celular, a versão do Android, a versão do app, o horário e um identificador de instalação do Crashlytics. O relatório não leva nenhum conteúdo seu nem do seu filho. O Google guarda esses relatórios por 90 dias.</p>
+      <h3>O que nunca sai do celular</h3>
+      <p>Isto não vai na análise de uso nem nos relatórios de falhas, e um teste automático do código confere isso em cada versão:</p>
+      <ul>
+        <li>os nomes (da criança, das rotinas, dos passos) e qualquer texto que você escrever;</li>
+        <li>as fotos e as gravações;</li>
+        <li>as respostas das boas-vindas: a idade, como a criança se comunica, que momento é mais difícil e se trabalha com algum profissional;</li>
+        <li>o conteúdo das rotinas.</li>
+      </ul>
+      <p>Tudo isso continua vivendo só no celular.</p>
+      <h3>Para quê</h3>
+      <p>Para saber quais partes do app ajudam e quais não, para encontrar e corrigir falhas, e para saber qual anúncio nosso traz famílias que ficam. Não vendemos esses dados, nada é compartilhado com terceiros para publicidade, e eles não são usados para mostrar anúncios a ninguém: o app não tem anúncios. O Google trata esses dados como fornecedor do Firebase; você pode ler como em <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
+      <h3>O identificador técnico dos avisos</h3>
+      <p>Além do Firebase, o app inclui o componente de notificações do Google para entregar os avisos, e esse componente pode atribuir um <strong>identificador técnico do aparelho —não da pessoa—</strong>. Nós não pedimos, não recebemos e não guardamos esse identificador. Ele não fica ligado a nenhum nome, não é usado para publicidade nem para rastreamento entre apps, e desaparece quando você desinstala o app.</p>
       <h2>O que fica salvo no celular</h2>
-      <p>As rotinas que você monta e seus passos, os perfis que você criar com nome e avatar, o progresso da criança (passos cumpridos, estrelas, prêmios, se um passo foi feito sozinho, como acordou de energia) e as suas preferências (idioma, alto contraste, voz, lembretes). Tudo isso fica no armazenamento do app, no celular, e não sai dali: não é enviado, não é sincronizado e não é compartilhado com ninguém. O nome do perfil é escolhido por você e pode ser um apelido.</p>
+      <p>As rotinas que você monta e seus passos, os perfis que você criar com nome e avatar, o progresso da criança (passos cumpridos, estrelas, prêmios, se um passo foi feito sozinho, como acordou de energia), as suas preferências (idioma, alto contraste, voz, lembretes) e o que você conta sobre a criança (a faixa de idade, como se comunica, que momento do dia é mais difícil e se trabalha com algum profissional). Tudo isso fica no armazenamento do app, no celular: não é enviado, não é sincronizado e não é compartilhado com ninguém. A análise de uso não copia esse conteúdo; só registra os fatos soltos da lista acima, como que uma rotina terminou e com quantos passos, ou o idioma do app. O nome do perfil é escolhido por você e pode ser um apelido.</p>
       <h2>Suas fotos</h2>
       <p>Você pode usar fotos suas nos passos de uma rotina: a foto real do banheiro da sua casa, da mochila, da cama. Essas fotos ficam no armazenamento do app, no celular, e nunca são enviadas para lugar nenhum. Quando você compartilha uma rotina com outra pessoa, as fotos da criança <strong>não</strong> viajam nesse arquivo: os passos são compartilhados, não as imagens do seu filho.</p>
       <h2>Sua voz (microfone)</h2>
-      <p>O Anticipa deixa você <strong>gravar a sua própria voz</strong> para um passo —"primeiro, escovar os dentes"— para que seu filho ouça a mãe ou o pai em vez da voz do telefone. É o que torna este app diferente dos outros: ele foi feito para acompanhar cada criança de forma pessoal. Por isso, e só por isso, ele pede o microfone. O microfone liga <strong>apenas enquanto você grava</strong>, e só se você tocar em "gravar"; a permissão é pedida nesse momento, nunca ao abrir o app. A gravação fica salva no celular, junto com as fotos, e <strong>nunca é enviada nem compartilhada</strong>. É opcional, e você pode apagá-la quando quiser.</p>
+      <p>O Anticipa deixa você <strong>gravar a sua própria voz</strong> para um passo —"primeiro, escovar os dentes"— para que seu filho ouça a mãe ou o pai em vez da voz do telefone. É o que torna este app diferente dos outros: ele foi feito para acompanhar cada criança de forma pessoal. Por isso, e só por isso, ele pede o microfone. O microfone liga <strong>apenas enquanto você grava</strong>, e só se você tocar em "gravar"; a permissão é pedida nesse momento, nunca ao abrir o app. A gravação fica salva no celular, junto com as fotos, e <strong>nunca é enviada nem compartilhada</strong>. A análise de uso só registra que uma voz foi gravada, nunca o áudio. É opcional, e você pode apagá-la quando quiser.</p>
       <h2>Permissões que o app pede</h2>
-      <p>Câmera e fotos, só quando você escolhe tirar ou buscar uma foto para um passo: o app abre o seletor do sistema e usa apenas a imagem que você escolhe. Microfone, só quando você escolhe gravar a sua voz para um passo: a gravação fica no celular e não é enviada para lugar nenhum. Notificações, só se você ligar um lembrete: servem para o aviso da rotina e mais nada. Esse aviso é programado pelo próprio celular na hora que você escolher, e para entregá-lo o app inclui o componente de notificações do Google, que pode atribuir um identificador técnico do aparelho (ver «Que dados coletamos»). Digital ou rosto, só se você deixar essa opção ligada para entrar na Área dos Pais: a verificação é feita pelo sistema operacional e o app recebe apenas um sim ou um não, nunca a sua digital.</p>
+      <p>Câmera e fotos, só quando você escolhe tirar ou buscar uma foto para um passo: o app abre o seletor do sistema e usa apenas a imagem que você escolhe. Microfone, só quando você escolhe gravar a sua voz para um passo: a gravação fica no celular e não é enviada para lugar nenhum. Notificações, só se você aceitar os avisos: servem para o aviso da rotina e, se você usa o plano grátis, para lembrar a rotina do seu filho quando passam dois dias sem abrir o app e na sexta à tarde. Esses avisos são programados pelo próprio celular na hora que você escolher, e para entregá-los o app inclui o componente de notificações do Google, que pode atribuir um identificador técnico do aparelho (ver «Que dados coletamos»). Digital ou rosto, só se você deixar essa opção ligada para entrar na Área dos Pais: a verificação é feita pelo sistema operacional e o app recebe apenas um sim ou um não, nunca a sua digital.</p>
       <h2>Publicidade</h2>
-      <p>Não existe. Nem banners, nem vídeos, nem conteúdo patrocinado. Não usamos identificadores de publicidade nem redes de anúncios, então não há perfilamento nem rastreamento entre apps.</p>
+      <p>Não existe. Nem banners, nem vídeos, nem conteúdo patrocinado. Não usamos identificadores de publicidade nem redes de anúncios, então não há perfilamento nem rastreamento entre apps. O que fazemos é anunciar o Anticipa no Google: para saber qual anúncio traz famílias que ficam, o app lê o nome do anúncio que o trouxe, como explicado em «Que dados coletamos».</p>
       <h2>A assinatura</h2>
-      <p>O app tem um plano pago para adultos. A cobrança é feita pelo Google Play com a sua conta, não por nós: não vemos nem guardamos dados do seu cartão. O app só sabe se existe uma assinatura ativa, e para isso pergunta ao Google Play no máximo uma vez por dia. Você cancela pelo Google Play quando quiser, e o que já montou continua inteiro no telefone do mesmo jeito. Dentro do app não há nenhuma outra compra, e a criança não pode comprar nada: o plano fica atrás da barreira de adultos.</p>
+      <p>O app tem um plano pago para adultos. A cobrança é feita pelo Google Play com a sua conta, não por nós: não vemos nem guardamos dados do seu cartão. Quando você compra, a análise de uso registra o plano, o valor e a moeda, sem nenhum dado de pagamento. O app só sabe se existe uma assinatura ativa, e para isso pergunta ao Google Play no máximo uma vez por dia. Você cancela pelo Google Play quando quiser, e o que já montou continua inteiro no telefone do mesmo jeito. Dentro do app não há nenhuma outra compra, e a criança não pode comprar nada: o plano fica atrás da barreira de adultos.</p>
       <h2>Crianças</h2>
-      <p>O app foi pensado para acompanhar crianças nas rotinas do dia, e segue as políticas do Google Play para famílias. Não coletamos nenhum dado pessoal da criança: nem nome real, nem e-mail, nem localização, nem nada que permita identificá-la. A criança não pode comprar nada, não pode escrever para ninguém e não há links que a tirem do app. Tudo o que é do adulto — criar rotinas, o progresso, os ajustes — fica atrás de uma barreira que ela não passa sozinha.</p>
+      <p>O app foi pensado para acompanhar crianças nas rotinas do dia, e segue as políticas do Google Play para famílias. Não coletamos o nome real da criança, nem o e-mail, nem a localização precisa, nem as respostas das boas-vindas, nem nada que você escreva sobre ela. A análise de uso mede como o app é usado com um identificador aleatório da instalação, sem saber quem o usa. A criança não pode comprar nada, não pode escrever para ninguém e não há links que a tirem do app. Tudo o que é do adulto — criar rotinas, o progresso, os ajustes — fica atrás de uma barreira que ela não passa sozinha.</p>
       <h2>Como apagar os dados</h2>
-      <p>Na Área dos Pais você pode apagar um perfil com tudo o que ele tem. Para apagar tudo, desinstale o app: como nada fica salvo fora do celular, desinstalar é um apagamento completo e definitivo, e o identificador técnico dos avisos vai junto. Não precisa pedir nada para a gente, porque não guardamos nada seu.</p>
+      <p>Na Área dos Pais você pode apagar um perfil com tudo o que ele tem. Para apagar tudo o que está no celular, desinstale o app: as rotinas, as fotos e as gravações não têm cópia fora dele, então são apagadas de vez, e o identificador técnico dos avisos vai junto.</p>
+      <p>Desinstalar também reinicia o identificador da análise de uso: se você instalar de novo, começa um novo. O que já foi enviado ao Firebase não é apagado ao desinstalar, mas expira sozinho: os dados de análise em 2 meses e os relatórios de falhas em 90 dias. O app não tem um botão para pedir o apagamento; se você quiser que a gente apague antes, escreva para <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
       <h2>Mudanças nesta política</h2>
-      <p>Se alguma versão futura mudar algo disso, atualizamos este texto e a data de revisão acima, e a mudança vem dentro da própria atualização do app.</p>
+      <p>Se alguma versão futura mudar algo disso, atualizamos este texto e a data de revisão acima, e a mudança vem dentro da própria atualização do app. A revisão de 1º de outubro de 2026 acrescentou o Firebase Analytics e o Firebase Crashlytics, que o app não usava antes.</p>
       <h2>Contato</h2>
       <p>Para qualquer dúvida sobre privacidade, escreva para <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
     </article>
