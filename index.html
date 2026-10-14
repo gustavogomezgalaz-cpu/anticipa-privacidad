@@ -70,7 +70,8 @@
             <li>la entrada a la Zona de Papás y la barrera de adultos (si se pasó o se cerró); si se usó la huella del teléfono (solo si pasó, se canceló, falló o no está disponible: la app nunca la ve) y si se tocó un número equivocado;</li>
             <li>los candados tocados, la pantalla de planes vista, cuánto tiempo se miró y cómo se salió de ella sin comprar, y si se abrió la muestra de la rutina impresa;</li>
             <li>si se vio la presentación del inicio o se saltó, y en qué pantalla se miraron las escenas de calma, cuál se usó y si se terminó;</li>
-            <li>el plan elegido, que se empezó una compra, la compra (el plan, el monto, la moneda y si se pagó después, en efectivo), si una compra falló y el motivo que dio Google Play, y si se usó «restaurar compras»;</li>
+            <li>el plan elegido, que se empezó una compra, la compra (el plan, el monto, la moneda, si se pagó después en efectivo y si terminó fuera de la pantalla de pago), si una compra falló y el motivo que dio Google Play, y si se usó «restaurar compras»;</li>
+            <li>si se pudieron cargar los precios de Google Play, si la app se instaló desde Google Play y si corre en un equipo de pruebas de Google;</li>
             <li>que se tocó un aviso;</li>
             <li>que se miró cómo se vería el día con el plan;</li>
             <li>que el niño usó el tablero «Quiero» para pedir algo, nunca qué pidió;</li>
@@ -84,7 +85,7 @@
         <li>Estos datos se guardan <strong>2 meses</strong> y después caducan.</li>
       </ul>
       <h3>Informes de fallos (Firebase Crashlytics)</h3>
-      <p>Si la app se cierra por un error, Firebase Crashlytics, también de Google, manda un informe técnico: la traza del error, el modelo del teléfono, la versión de Android, la versión de la app, la hora y un identificador de instalación de Crashlytics. El informe no lleva ningún contenido tuyo ni de tu hijo. Google guarda estos informes 90 días.</p>
+      <p>Si la app se cierra por un error, Firebase Crashlytics, también de Google, manda un informe técnico: la traza del error, el modelo del teléfono, la versión de Android, la versión de la app, la hora y un identificador de instalación de Crashlytics. El informe no lleva ningún contenido tuyo ni de tu hijo. Además, cuando una compra no se completa (también si se cancela) o una consulta a Google Play no contesta, Crashlytics recibe un informe sin cierre con el código y el mensaje que dio Google Play, el paso de la compra y el plan; tampoco lleva nada tuyo ni de tu hijo. Google guarda estos informes 90 días.</p>
       <h3>Lo que nunca sale del teléfono</h3>
       <p>Esto no viaja en la analítica ni en los informes de fallos, y una prueba automática del código lo vigila en cada versión:</p>
       <ul>
@@ -116,7 +117,7 @@
       <p>Desde la Zona de Papás puedes borrar un perfil con todo su contenido. Para borrar todo lo que hay en el teléfono, desinstala la app: las rutinas, las fotos y las grabaciones no tienen copia fuera de él, así que se borran del todo, y el identificador técnico de los avisos desaparece con ellas.</p>
       <p>Desinstalar también reinicia el identificador de la analítica: si vuelves a instalar, empieza uno nuevo. Lo que ya se envió a Firebase no se borra al desinstalar, pero caduca solo: los datos de analítica a los 2 meses y los informes de fallos a los 90 días. La app no tiene un botón para pedir el borrado; si quieres que lo borremos antes, escríbenos a <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
       <h2>Cambios en esta política</h2>
-      <p>Si alguna versión futura cambiara algo de esto, se actualiza este texto y la fecha de revisión de arriba, y el cambio viaja en la propia actualización de la app. La revisión del 1 de octubre de 2026 agregó Firebase Analytics y Firebase Crashlytics, que la app no usaba antes, la del 3 de octubre completó la lista de hechos de uso, la del 8 de octubre sumó los de la bienvenida nueva, el comunicador, las rutinas, los avisos y la barrera de adultos, la del 10 de octubre, los de la presentación del inicio y las escenas de calma, y la del 14 de octubre, el motivo de una compra fallida y qué impidió pedir una reseña.</p>
+      <p>Si alguna versión futura cambiara algo de esto, se actualiza este texto y la fecha de revisión de arriba, y el cambio viaja en la propia actualización de la app. La revisión del 1 de octubre de 2026 agregó Firebase Analytics y Firebase Crashlytics, que la app no usaba antes, la del 3 de octubre completó la lista de hechos de uso, la del 8 de octubre sumó los de la bienvenida nueva, el comunicador, las rutinas, los avisos y la barrera de adultos, la del 10 de octubre, los de la presentación del inicio y las escenas de calma, y la del 14 de octubre, el motivo de una compra fallida, qué impidió pedir una reseña, la carga de los precios de Google Play y los errores de la tienda que van a Crashlytics.</p>
       <h2>Contacto</h2>
       <p>Para cualquier duda sobre privacidad, escribe a <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
     </article>
@@ -141,7 +142,8 @@
             <li>entering the Parents Area and the grown-up barrier (whether it was passed or closed); whether the phone's fingerprint was used (only whether it passed, was cancelled, failed or is not available: the app never sees it) and whether a wrong number was tapped;</li>
             <li>locks tapped, the plans screen being viewed, how long it was looked at and how it was left without buying, and whether the sample of the printed routine was opened;</li>
             <li>whether the opening presentation was watched or skipped, and on which screen the calm scenes were viewed, which one was used and whether it was finished;</li>
-            <li>the plan chosen, that a purchase was started, the purchase (plan, amount, currency and whether it was paid later, in cash), a failed purchase and the reason Google Play gave and "restore purchases";</li>
+            <li>the plan chosen, that a purchase was started, the purchase (plan, amount, currency, whether it was paid later in cash and whether it finished outside the payment screen), a failed purchase and the reason Google Play gave, and "restore purchases";</li>
+            <li>whether Google Play prices could be loaded, whether the app was installed from Google Play and whether it runs on a Google test device;</li>
             <li>that a notification was tapped;</li>
             <li>that someone looked at what the day would look like with the plan;</li>
             <li>that the child used the "I want" board to ask for something, never what they asked for;</li>
@@ -155,7 +157,7 @@
         <li>This data is kept for <strong>2 months</strong> and then expires.</li>
       </ul>
       <h3>Crash reports (Firebase Crashlytics)</h3>
-      <p>If the app closes because of an error, Firebase Crashlytics, also from Google, sends a technical report: the error trace, the phone model, the Android version, the app version, the time and a Crashlytics installation identifier. The report carries no content from you or your child. Google keeps these reports for 90 days.</p>
+      <p>If the app closes because of an error, Firebase Crashlytics, also from Google, sends a technical report: the error trace, the phone model, the Android version, the app version, the time and a Crashlytics installation identifier. The report carries no content from you or your child. Also, when a purchase is not completed (including when it is cancelled) or a query to Google Play gets no answer, Crashlytics receives a report (without a crash) with the code and message Google Play gave, the purchase step and the plan; it carries nothing of yours or your child's either. Google keeps these reports for 90 days.</p>
       <h3>What never leaves the phone</h3>
       <p>This does not travel in the analytics or in the crash reports, and an automated test in the code checks it in every version:</p>
       <ul>
@@ -187,7 +189,7 @@
       <p>From the Parents Area you can delete a profile along with everything in it. To delete everything on the phone, uninstall the app: the routines, photos and recordings have no copy outside it, so they are gone for good, and the technical identifier used for notifications goes with them.</p>
       <p>Uninstalling also resets the analytics identifier: if you install again, a new one starts. What was already sent to Firebase is not deleted when you uninstall, but it expires on its own: analytics data after 2 months and crash reports after 90 days. The app has no button to request deletion; if you want us to delete it sooner, write to <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
       <h2>Changes to this policy</h2>
-      <p>If a future version changes any of this, we update this text and the review date above, and the change travels inside the app update itself. The October 1, 2026 revision added Firebase Analytics and Firebase Crashlytics, which the app did not use before, the October 3 revision completed the list of usage events, the October 8 revision added those of the new welcome, the communicator, routines, reminders and the grown-up barrier, the October 10 revision, those of the opening presentation and the calm scenes, and the October 14 revision, the reason for a failed purchase and what kept the app from asking for a review.</p>
+      <p>If a future version changes any of this, we update this text and the review date above, and the change travels inside the app update itself. The October 1, 2026 revision added Firebase Analytics and Firebase Crashlytics, which the app did not use before, the October 3 revision completed the list of usage events, the October 8 revision added those of the new welcome, the communicator, routines, reminders and the grown-up barrier, the October 10 revision, those of the opening presentation and the calm scenes, and the October 14 revision, the reason for a failed purchase, what kept the app from asking for a review, the loading of Google Play prices and the store errors that go to Crashlytics.</p>
       <h2>Contact</h2>
       <p>For any privacy question, write to <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
     </article>
@@ -212,7 +214,8 @@
             <li>a entrada na Área dos Pais e a barreira de adultos (se foi passada ou fechada); se a digital do telefone foi usada (só se passou, foi cancelada, falhou ou não está disponível: o app nunca a vê) e se um número errado foi tocado;</li>
             <li>os cadeados tocados, a tela de planos vista, quanto tempo ela foi olhada e como se saiu dela sem comprar, e se a amostra da rotina impressa foi aberta;</li>
             <li>se a apresentação inicial foi vista ou pulada, e em qual tela as cenas de calma foram vistas, qual foi usada e se foi terminada;</li>
-            <li>o plano escolhido, que uma compra começou, a compra (plano, valor, moeda e se foi paga depois, em dinheiro), a falha de uma compra e o motivo dado pelo Google Play e «restaurar compras»;</li>
+            <li>o plano escolhido, que uma compra começou, a compra (plano, valor, moeda, se foi paga depois em dinheiro e se terminou fora da tela de pagamento), a falha de uma compra e o motivo dado pelo Google Play, e «restaurar compras»;</li>
+            <li>se os preços do Google Play puderam ser carregados, se o app foi instalado pelo Google Play e se roda em um aparelho de testes do Google;</li>
             <li>que um aviso foi tocado;</li>
             <li>que alguém olhou como seria o dia com o plano;</li>
             <li>que a criança usou o quadro «Eu quero» para pedir algo, nunca o que pediu;</li>
@@ -226,7 +229,7 @@
         <li>Esses dados ficam guardados por <strong>2 meses</strong> e depois expiram.</li>
       </ul>
       <h3>Relatórios de falhas (Firebase Crashlytics)</h3>
-      <p>Se o app fechar por causa de um erro, o Firebase Crashlytics, também do Google, envia um relatório técnico: o rastreamento do erro (stack trace), o modelo do celular, a versão do Android, a versão do app, o horário e um identificador de instalação do Crashlytics. O relatório não leva nenhum conteúdo seu nem do seu filho. O Google guarda esses relatórios por 90 dias.</p>
+      <p>Se o app fechar por causa de um erro, o Firebase Crashlytics, também do Google, envia um relatório técnico: o rastreamento do erro (stack trace), o modelo do celular, a versão do Android, a versão do app, o horário e um identificador de instalação do Crashlytics. O relatório não leva nenhum conteúdo seu nem do seu filho. Além disso, quando uma compra não se completa (também se for cancelada) ou uma consulta ao Google Play não responde, o Crashlytics recebe um relatório (sem fechamento) com o código e a mensagem dados pelo Google Play, a etapa da compra e o plano; ele também não leva nada seu nem do seu filho. O Google guarda esses relatórios por 90 dias.</p>
       <h3>O que nunca sai do celular</h3>
       <p>Isto não vai na análise de uso nem nos relatórios de falhas, e um teste automático do código confere isso em cada versão:</p>
       <ul>
@@ -258,7 +261,7 @@
       <p>Na Área dos Pais você pode apagar um perfil com tudo o que ele tem. Para apagar tudo o que está no celular, desinstale o app: as rotinas, as fotos e as gravações não têm cópia fora dele, então são apagadas de vez, e o identificador técnico dos avisos vai junto.</p>
       <p>Desinstalar também reinicia o identificador da análise de uso: se você instalar de novo, começa um novo. O que já foi enviado ao Firebase não é apagado ao desinstalar, mas expira sozinho: os dados de análise em 2 meses e os relatórios de falhas em 90 dias. O app não tem um botão para pedir o apagamento; se você quiser que a gente apague antes, escreva para <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
       <h2>Mudanças nesta política</h2>
-      <p>Se alguma versão futura mudar algo disso, atualizamos este texto e a data de revisão acima, e a mudança vem dentro da própria atualização do app. A revisão de 1º de outubro de 2026 acrescentou o Firebase Analytics e o Firebase Crashlytics, que o app não usava antes, a de 3 de outubro completou a lista de eventos de uso, a de 8 de outubro somou os das novas boas-vindas, do comunicador, das rotinas, dos avisos e da barreira de adultos, a de 10 de outubro, os da apresentação inicial e das cenas de calma, e a de 14 de outubro, o motivo de uma compra que falhou e o que impediu pedir uma avaliação.</p>
+      <p>Se alguma versão futura mudar algo disso, atualizamos este texto e a data de revisão acima, e a mudança vem dentro da própria atualização do app. A revisão de 1º de outubro de 2026 acrescentou o Firebase Analytics e o Firebase Crashlytics, que o app não usava antes, a de 3 de outubro completou a lista de eventos de uso, a de 8 de outubro somou os das novas boas-vindas, do comunicador, das rotinas, dos avisos e da barreira de adultos, a de 10 de outubro, os da apresentação inicial e das cenas de calma, e a de 14 de outubro, o motivo de uma compra que falhou, o que impediu pedir uma avaliação, o carregamento dos preços do Google Play e os erros da loja que vão para o Crashlytics.</p>
       <h2>Contato</h2>
       <p>Para qualquer dúvida sobre privacidade, escreva para <a href="mailto:contacto@gusmarstudios.com">contacto@gusmarstudios.com</a>.</p>
     </article>
